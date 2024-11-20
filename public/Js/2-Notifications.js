@@ -5,7 +5,6 @@ function FetchNotificationsData() {
         .then((Data) => { ShowNotificationsData(Data[0], Data[1]) })
         .catch((err) => { return location.href = "/Error" })
 } FetchNotificationsData()
-setInterval(() => { FetchNotificationsData() }, 5000);
 
 function ShowNotificationsData(MainData, Decode) {
     User = Decode
