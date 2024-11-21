@@ -99,6 +99,7 @@ function NewReceipt(event) {
   let Rows = Table.querySelectorAll('tr')
 
   Rows.forEach((Row, index) => {
+    if(Row.querySelector('.NameItem').id != "empty"){
     let obj = {
       NameItem: Row.querySelector('.NameItem').id,
       UnitsItem: Row.querySelector('.UnitsItem').value,
@@ -111,7 +112,7 @@ function NewReceipt(event) {
       TotalItem: Row.querySelector('.TotalItem').value,
     }
     if (Btn.id != "Save" && index > 0 || Btn.id == "Save") { ProductArray.push(obj) }
-  });
+  }});
 
   let Link = '/GeneralData', Method = 'POST', ShowReceipt = "NewReceipt"
   if (Btn.id != "Save") { Link = '/GeneralData' + Btn.id; Method = 'PUT'; ShowReceipt = Btn.id }
