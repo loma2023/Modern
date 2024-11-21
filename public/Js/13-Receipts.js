@@ -99,7 +99,7 @@ function NewReceipt(event) {
   let Rows = Table.querySelectorAll('tr')
 
   Rows.forEach((Row, index) => {
-    if(Row.querySelector('.NameItem').id != "empty"){
+    if(Row.querySelector('.NameItem').id !== "empty"){
     let obj = {
       NameItem: Row.querySelector('.NameItem').id,
       UnitsItem: Row.querySelector('.UnitsItem').value,
